@@ -19,7 +19,6 @@ function execute(char){
     }else if(char == ']'){
         if(arr[pointer] != 0){
             instructionIndex = loopArr[loopArr.length-1]
-            
         }else{
             loopArr.pop()
         }
@@ -39,7 +38,7 @@ let instructionIndex = 0
 try{
     await fs.open('input.txt')
 }catch(err){
-    throw new Error('cannot find input.txt')
+    await fs.writeFile('input.txt','','ascii')
 }
 var inIndex = 0
 var inArr = await fs.readFile(process.argv[2],'utf-8')
@@ -53,3 +52,4 @@ var data = await fs.readFile(process.argv[2],'utf-8')
     }
     console.log(arr)
 
+await fs.writeFile('output.txt',new Uint8Array(outArr) ,'ascii')
