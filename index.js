@@ -13,7 +13,6 @@ function execute(char){
        outArr.push(arr[pointer])  
     }else if(char == ','){
         arr[pointer] = inArr[inIndex]
-        inIndex++
     }else if(char == '['){
         loopArr.push(instructionIndex)
     }else if(char == ']'){
@@ -41,7 +40,7 @@ try{
     await fs.writeFile('input.txt','','ascii')
 }
 var inIndex = 0
-var inArr = await fs.readFile(process.argv[2],'utf-8')
+var inArr = Array.from((await fs.readFile('input.txt','ascii')).split(''),x=>x.charCodeAt(0))
 var data = await fs.readFile(process.argv[2],'utf-8')
     if(!getFileExtension(process.argv[2])== 'bf' || !getFileExtension(process.argv[2])== 'b') throw new Error('filename must end in .b or .bf')
 
