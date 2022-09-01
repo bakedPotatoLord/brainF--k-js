@@ -2,7 +2,7 @@ import fs from 'fs/promises'
 
 function execute(char){
     if(char == '+'){
-        arr[pointer]++
+        arr[pointer] ++
     }else if(char == '-'){
         arr[pointer]--
     }else if(char == '>'){
@@ -15,13 +15,13 @@ function execute(char){
         arr[pointer] = inArr[inIndex]
         inIndex++
     }else if(char == '['){
-        loopArr.push(pointer)
+        loopArr.push(instructionIndex)
     }else if(char == ']'){
         if(arr[pointer] != 0){
-            pointer = loopArr[loopArr.length-1]
-            loopArr.pop()
-        }else{
+            instructionIndex = loopArr[loopArr.length-1]
             
+        }else{
+            loopArr.pop()
         }
     }
 }
@@ -34,6 +34,7 @@ var arr = Array.from(new Uint8ClampedArray(40000),x=>0)
 var outArr = []
 let pointer = 0
 let loopArr = []
+let instructionIndex = 0
 
 try{
     await fs.open('input.txt')
@@ -46,8 +47,9 @@ var data = await fs.readFile(process.argv[2],'utf-8')
     if(!getFileExtension(process.argv[2])== 'bf' || !getFileExtension(process.argv[2])== 'b') throw new Error('filename must end in .b or .bf')
 
     data = data.split('')
-    for(let i of data){
-        execute(i)
+    while(instructionIndex <= data.length){
+        execute(data[instructionIndex])
+        instructionIndex++
     }
     console.log(arr)
 
