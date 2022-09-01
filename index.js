@@ -13,6 +13,7 @@ function execute(char){
        outArr.push(arr[pointer])  
     }else if(char == ','){
         arr[pointer] = inArr[inIndex]
+				inIndex++
     }else if(char == '['){
         loopArr.push(instructionIndex)
     }else if(char == ']'){
@@ -46,9 +47,10 @@ var data = await fs.readFile(process.argv[2],'utf-8')
 
     data = data.split('')
     while(instructionIndex <= data.length){
-        execute(data[instructionIndex])
-        instructionIndex++
+        execute(data[instructionIndex])     
+				instructionIndex++
     }
     console.log(arr)
 
 await fs.writeFile('output.txt',new Uint8Array(outArr) ,'ascii')
+console.log(await fs.readFile('output.txt','ascii'))
