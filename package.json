@@ -1,11 +1,11 @@
 {
   "name": "brainf--k",
-  "type":"module",
+  "type": "module",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node start.js",
+    "install": "node init.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,6 @@
   "bugs": {
     "url": "https://github.com/bakedPotatoLord/brainF--k-js/issues"
   },
-  "homepage": "https://github.com/bakedPotatoLord/brainF--k-js#readme"
+  "homepage": "https://github.com/bakedPotatoLord/brainF--k-js#readme",
+  "description": ""
 }
