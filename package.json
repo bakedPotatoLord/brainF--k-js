@@ -1,11 +1,11 @@
 {
-  "name": "brainf--k",
+  "name": "@bakedpotatolord/brainf--k",
   "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "start": "node start.js",
-    "install": "node init.js"
+    "create": "node init.js"
   },
   "repository": {
     "type": "git",
