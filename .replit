@@ -1,6 +1,6 @@
 
 hidden = [".config"]
-run = "node . program.bf"
+run = "node . add2vals.bf"
 
 [[hints]]
 regex = "Error \\[ERR_REQUIRE_ESM\\]"

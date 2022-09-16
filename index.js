@@ -17,6 +17,7 @@ function execute(char){
     }else if(char == '['){
         loopArr.push(instructionIndex)
     }else if(char == ']'){
+			if(loopArr.length == 0) throw new Error("unmatched ]")
         if(arr[pointer] != 0){
             instructionIndex = loopArr[loopArr.length-1]
         }else{
@@ -45,12 +46,15 @@ var inArr = Array.from((await fs.readFile('input.txt','ascii')).split(''),x=>x.c
 var data = await fs.readFile(process.argv[2],'utf-8')
     if(!getFileExtension(process.argv[2])== 'bf' || !getFileExtension(process.argv[2])== 'b') throw new Error('filename must end in .b or .bf')
 
-    data = data.split('')
-    while(instructionIndex <= data.length){
-        execute(data[instructionIndex])     
-				instructionIndex++
-    }
-    console.log(arr)
+data = data.split('')
+while(instructionIndex <= data.length){
+		execute(data[instructionIndex])     
+		instructionIndex++
+}
+console.log(arr)
+
+if(loopArr.length != 0) throw new Error("unmatched [")
 
 await fs.writeFile('output.txt',new Uint8Array(outArr) ,'ascii')
+console.log(`pointer: ${pointer}`)
 console.log(await fs.readFile('output.txt','ascii'))
