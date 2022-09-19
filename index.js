@@ -13,6 +13,7 @@ function execute(char){
        outArr.push(arr[pointer])  
     }else if(char == ','){
         arr[pointer] = inArr[inIndex]
+				if(inArr[inIndex] == undefined) arr[pointer] = 0
 				inIndex++
     }else if(char == '['){
         loopArr.push(instructionIndex)
@@ -56,5 +57,5 @@ console.log(arr)
 if(loopArr.length != 0) throw new Error("unmatched [")
 
 await fs.writeFile('output.txt',new Uint8Array(outArr) ,'ascii')
-console.log(`pointer: ${pointer}`)
+console.log(`pointer: ${pointer}, value: ${arr[pointer]}`)
 console.log(await fs.readFile('output.txt','ascii'))
