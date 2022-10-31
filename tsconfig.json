@@ -3,6 +3,8 @@
       "target":"ESNext",
       "watch": true,
       "module": "ESNext",
-      "lib":["DOM","ESNext"]
+      "lib":["DOM","ESNext"],
+      "outDir": "lib",
+      "declaration": true,
   }
 }
