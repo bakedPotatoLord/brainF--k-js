@@ -4,7 +4,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "bfi": "node ./lib/index.js"
+  },
+  "bin":{
+    "bfi": "./lib/index.js"
   },
   "repository": {
     "type": "git",
