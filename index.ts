@@ -1,6 +1,13 @@
 import * as fs from "node:fs/promises"
 
-function execute(char){
+let arr = Array.from(new Uint8ClampedArray(40000),x=>0)
+let outArr:number[] = []
+let pointer = 0
+let loopArr:number[] = []
+let instructionIndex = 0
+let inIndex = 0
+
+function execute(char:string,inArr:number[]){
     if(char == '+'){
         arr[pointer] ++
     }else if(char == '-'){
@@ -27,33 +34,17 @@ function execute(char){
     }
 }
 
-
-var arr = Array.from(new Uint8ClampedArray(40000),x=>0)
-var outArr:number[] = []
-let pointer = 0
-let loopArr:number[] = []
-let instructionIndex = 0
-var inIndex = 0
-
-try{
-    await fs.open('input.txt')
-}catch(err){
-    await fs.writeFile('input.txt','','ascii')
+export async function interpret(program:string[],inputArr:number[]){
+    
+    
+    while(instructionIndex <= program.length){
+            execute(program[instructionIndex],inputArr)     
+            instructionIndex++ 
+    }
+    console.log(arr)
+    
+    if(loopArr.length != 0) throw new Error("unmatched [")
+    
+    console.log(`pointer: ${pointer}, value: ${arr[pointer]}`)
+    console.log(new TextDecoder().decode(new Uint8ClampedArray(outArr)))
 }
-var inArr = Array.from(String(await fs.readFile('input.txt','ascii')).split(''),x=>x.charCodeAt(0))
-try{
-    var data = (await fs.readFile(process.argv[2],'utf-8')).split('')
-}catch(err){
-    throw new Error("specify bf file to run")
-}
-
-while(instructionIndex <= data.length){
-		execute(data[instructionIndex])     
-		instructionIndex++ 
-}
-console.log(arr)
-
-if(loopArr.length != 0) throw new Error("unmatched [")
-
-console.log(`pointer: ${pointer}, value: ${arr[pointer]}`)
-console.log(new TextDecoder().decode(new Uint8ClampedArray(outArr)))
