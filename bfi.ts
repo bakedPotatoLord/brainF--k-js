@@ -5,12 +5,13 @@ try{
   await fs.open('input.txt')
 }catch(err){
   await fs.writeFile('input.txt','','ascii')
+  console.log("automatically generated input.txt")
 }
-var inArr = Array.from(String(await fs.readFile('input.txt','ascii')).split(''),x=>x.charCodeAt(0))
+let inArr = Array.from(String(await fs.readFile('input.txt','ascii')).split(''),x=>x.charCodeAt(0))
 try{
   var data = (await fs.readFile(process.argv[2],'utf-8')).split('')
 }catch(err){
-  throw new Error("specify bf file to run")
+  throw new Error("path not found")
 }
 
 interpret(data,inArr)
