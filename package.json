@@ -1,13 +1,10 @@
 {
   "name": "@bakedpotatolord/brainf--k",
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
-  "scripts": {
-    "bfi": "node ./lib/index.js"
-  },
   "bin":{
-    "bfi": "./lib/index.js"
+    "bfi": "node ./lib/bfi.js"
   },
   "repository": {
     "type": "git",
