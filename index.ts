@@ -1,5 +1,3 @@
-import * as fs from "node:fs/promises"
-
 let arr = Array.from(new Uint8ClampedArray(40000),x=>0)
 let outArr:number[] = []
 let pointer = 0
@@ -35,16 +33,11 @@ function execute(char:string,inArr:number[]){
 }
 
 export async function interpret(program:string[],inputArr:number[]){
-    
-    
     while(instructionIndex <= program.length){
             execute(program[instructionIndex],inputArr)     
             instructionIndex++ 
     }
     console.log(arr)
-    
-    if(loopArr.length != 0) throw new Error("unmatched [")
-    
     console.log(`pointer: ${pointer}, value: ${arr[pointer]}`)
-    console.log(new TextDecoder().decode(new Uint8ClampedArray(outArr)))
+    console.log(`\nOutput: ${new TextDecoder().decode(new Uint8ClampedArray(outArr))}`)
 }
