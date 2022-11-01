@@ -7,11 +7,11 @@ brainf--k-js is an interpreter for the brainfuck esoteric programming language.
   <li>Run:
 
   ```shell
-  npm i  @bakedpotatolord/brainf--k-js -g
+  npm i  @bakedpotatolord/brainf--k -g
   ```
 
   </li>
-  <li>write your program </li>
+  <li>Write your program </li>
   <li>If nessesary, make an input.txt file, and put your input values into it</li>
   <li>Run:
   
