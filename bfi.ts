@@ -1,6 +1,8 @@
-#!usr/bin/env node
+#!/usr/bin/env node
 import { interpret } from "./main.js";
 import * as fs from "node:fs/promises"
+
+console.log("interpretation starting")
 
 try{
   await fs.open('input.txt')
