@@ -1,5 +1,13 @@
 {
   "name": "@bakedpotatolord/brainf--k",
+  "description": "An interpreter for the brainf--k programming language written in Typescript",
+  "keywords": [
+    "brainfuck",
+    "bf",
+    "interpreter",
+    "language",
+    "typescript"
+],
   "type": "module",
   "version": "1.0.5",
   "main": "index.js",
@@ -10,14 +18,12 @@
     "type": "git",
     "url": "git+https://github.com/bakedPotatoLord/brainF--k-js.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "BakedPotatoLord",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bakedPotatoLord/brainF--k-js/issues"
   },
   "homepage": "https://github.com/bakedPotatoLord/brainF--k-js#readme",
-  "description": "",
   "devDependencies": {
     "@types/node": "^18.11.8"
   }
