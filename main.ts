@@ -34,10 +34,11 @@ function execute(char:string,inArr:number[]){
 
 export async function interpret(program:string[],inputArr:number[]){
     while(instructionIndex <= program.length){
-            execute(program[instructionIndex],inputArr)     
-            instructionIndex++ 
+        execute(program[instructionIndex],inputArr)     
+        instructionIndex++ 
     }
-    console.log("\x1b[0m",arr)
-    console.log(`pointer: ${pointer}, value: ${arr[pointer]}`)
+    console.log("\x1b[0m","interpretation completed")
+    console.log("Memory Dump:",arr)
+    console.log(`Pointer: ${pointer}, Value: ${arr[pointer]}`)
     console.log(`\nOutput: ${new TextDecoder().decode(new Uint8ClampedArray(outArr))}`)
 }
