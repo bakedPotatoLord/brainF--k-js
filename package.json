@@ -8,6 +8,7 @@
     "language",
     "typescript"
 ],
+"icon":"./assets/BFI.png",
   "type": "module",
   "version": "1.0.5",
   "main": "index.js",
