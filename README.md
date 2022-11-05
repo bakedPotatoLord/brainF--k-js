@@ -1,23 +1,19 @@
 # brainf--k-js
-brainf--k-js is an interpreter for the brainfuck esoteric programming language.
+CLI-based brainfuck interpreter.
 
-# Usage
+## Why?
+There is a lot of brainfuck interpreters on npm, but most of them either have unexpected results, or require you to either write your code inside of a .js file or use fs to pass it into the program. this package solves this problem by usi.ng a command line interface to smoothly run brainfuck code.
 
+## Usage
 <ol>
-  <li>Run:
+  <li>Install package globally by running:
 
-  ```shell
-  npm i  @bakedpotatolord/brainf--k -g
-  ```
-
+  `npm i  @bakedpotatolord/brainf--k -g`
   </li>
   <li>Write your program </li>
   <li>If nessesary, make an input.txt file, and put your input values into it</li>
-  <li>Run:
+  <li>interpreret your program with:
   
-  ```shell
-  bfi <programPath>
-  ```
-  
+  `bfi <path_to_your_program>`
   </li>
 <ol>
