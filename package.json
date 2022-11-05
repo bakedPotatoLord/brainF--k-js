@@ -1,6 +1,6 @@
 {
   "name": "@bakedpotatolord/brainf--k",
-  "description": "An interpreter for the brainf--k programming language written in Typescript",
+  "description": "CLI-based brainfuck interpreter.",
   "keywords": [
     "brainfuck",
     "bf",
@@ -12,7 +12,7 @@
   "version": "1.0.6",
   "main": "/build/bfi.js",
   "bin": {
-    "bfi": "./lib/bfi.js"
+    "bfi": "./build/bfi.js"
   },
   "repository": {
     "type": "git",
