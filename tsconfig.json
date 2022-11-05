@@ -4,7 +4,9 @@
       "watch": true,
       "module": "ESNext",
       "lib":["DOM","ESNext"],
-      "outDir": "lib",
+      "outDir": "build",
       "declaration": true,
-  }
+  },
+  "include": ["*.ts"],
+  "exclude": ["node_modules","build/*.ts"]
 }
