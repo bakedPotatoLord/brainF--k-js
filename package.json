@@ -5,13 +5,12 @@
     "brainfuck",
     "bf",
     "interpreter",
-    "language",
-    "typescript"
+    "language"
   ],
   "icon": "./assets/BFI.png",
   "type": "module",
   "version": "1.0.6",
-  "main": "index.js",
+  "main": "/build/bfi.js",
   "bin": {
     "bfi": "./lib/bfi.js"
   },
