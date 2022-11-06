@@ -12,7 +12,7 @@ There is a lot of brainfuck interpreters on npm, but most of them either have un
   </li>
   <li>Write your program </li>
   <li>If nessesary, make an input.txt file, and put your input values into it</li>
-  <li>interpreret your program with:
+  <li>Run your program with:
   
   `bfi <path_to_your_program>`
   </li>
