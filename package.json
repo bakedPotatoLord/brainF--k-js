@@ -5,7 +5,10 @@
     "brainfuck",
     "bf",
     "interpreter",
-    "language"
+    "language",
+    "cli",
+    "CLI",
+    "command-line"
   ],
   "icon": "./assets/BFI.png",
   "type": "module",
