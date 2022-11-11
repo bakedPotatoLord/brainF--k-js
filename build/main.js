@@ -1,3 +1,4 @@
+import chalk from "chalk";
 let arr = Array.from(new Uint8ClampedArray(40000), x => 0);
 let outArr = [];
 let pointer = 0;
@@ -47,7 +48,7 @@ export async function interpret(program, inputArr) {
         execute(program[instructionIndex], inputArr);
         instructionIndex++;
     }
-    console.log("\x1b[0m", "interpretation completed");
+    console.log(chalk.blueBright("interpretation completed"));
     console.log("Memory Dump:", arr);
     console.log(`Pointer: ${pointer}, Value: ${arr[pointer]}`);
     console.log(`\nOutput: ${new TextDecoder().decode(new Uint8ClampedArray(outArr))}`);
