@@ -36,8 +36,8 @@ function execute(char:string,inArr:number[]){
 
 export async function interpret(program:string[],inputArr:number[]){
     while(instructionIndex <= program.length){
-        execute(program[instructionIndex],inputArr)     
-        instructionIndex++ 
+        execute(program[instructionIndex],inputArr)
+        instructionIndex++
     }
     console.log(chalk.blueBright("interpretation completed"))
     console.log("Memory Dump:",arr)
