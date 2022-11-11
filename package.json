@@ -29,5 +29,8 @@
   "homepage": "https://github.com/bakedPotatoLord/brainF--k-js#readme",
   "devDependencies": {
     "@types/node": "^18.11.8"
+  },
+  "dependencies": {
+    "chalk": "^5.1.2"
   }
 }
