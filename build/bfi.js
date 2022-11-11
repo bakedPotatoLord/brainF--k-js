@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { interpret } from "./main.js";
+import { interpret } from "./main";
 import * as fs from "node:fs/promises";
 console.log('\x1b[36m%s\x1b[0m', "BFInterpreter starting");
 try {
